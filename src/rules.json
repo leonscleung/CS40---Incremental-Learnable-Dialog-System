@@ -1,0 +1,59 @@
+[{
+   "slot": "greeting",
+   "answers": ["hello", "hi", "hey"],
+   "questions": ["How may I be of your address?", "Hello {name}, how can I help you?"]
+ },
+ {
+   "slot": "name",
+   "questions": ["Can I have your name please?", "May I know your name please?"]
+ },
+ {
+   "slot": "date_departure",
+   "questions": ["Sure, could you please share your departure and arrival day?", "Can I have your travelling dates?", "Sure, please share your departure date?"]
+ },
+ {
+   "slot": "date_return",
+   "questions": ["Sure, could you please share your departure and arrival day?", "Can I have your travelling dates?", "Sure, please share your return date?"]
+ },
+ {
+   "slot": "place_from",
+   "questions": ["Please let me know your boarding and landing points.", "I need airport codes of your journey locations so please provide them.", "Which city are you leaving from?"]
+ },
+ {
+   "slot": "place_to",
+   "questions": ["Please let me know your boarding and landing points.", "I need your journey locations so please provide them.", "Can I know your destination?"]
+ },
+ {
+   "slot": "trip_type",
+   "questions": ["Sure {name}, will this be one way or round trip?", "Are you looking for round trip flight?"]
+ },
+ {
+   "slot": "connection_limit",
+   "questions": ["Got it. How many connections would you like at most?"]
+ },
+ {
+   "slot": "class",
+   "questions": ["Are you comfortable with economy class flight or business class flight?", "Would you like to prefer business class or economy class?"]
+ },
+ {
+   "slot": "others",
+   "questions": ["Do you have any other preference?", "Do you have any other specification that you are looking for?"]
+ },
+ {
+   "slot": "searchResult",
+   "questions": ["There is a flight travelling between {place_from} and {place_to} available with United airlines, with connection limit {connection_limit} and fare 100. Shall I proceed for booking?"]
+ },
+  {
+   "slot": "confirmationY",
+    "answers": ["please proceed", "yes please proceed", "yes", "ok"],
+   "questions": ["Your reservation has been done. You can collect your ticket at the time of check - IN.", "Your ticket has been confirmed."]
+ },
+  {
+   "slot": "confirmationN",
+   "questions": ["Thanks for reaching us.", "Have a nice day."]
+ },
+  {
+    "slot": "defaulterror",
+    "questions": ["For further assistance, ou can also call to our customer-executive on 022-1111111."]
+  }
+]

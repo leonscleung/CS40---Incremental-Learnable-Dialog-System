@@ -1,0 +1,29 @@
+BOS O
+one B-flight_stop
+stop I-flight_stop
+EOS O
+
+
+BOS O
+one B-flight_stop
+stop I-flight_stop
+EOS O
+
+
+BOS O
+one B-flight_stop
+stop I-flight_stop
+EOS O
+
+
+BOS O
+one B-flight_stop
+stop I-flight_stop
+EOS O
+
+
+BOS O
+one B-flight_stop
+stop I-flight_stop
+EOS O
+
