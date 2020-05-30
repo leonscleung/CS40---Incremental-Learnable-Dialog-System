@@ -19,6 +19,7 @@ To run the model, move the current directory in command prompt to the project ro
 cd src
 python chat.py
 ```
+For PyCharm users, the code can be run by executing the chat.py script under the src folder.
 After the flask server is set, enter http://127.0.0.1:1234/ in your browser and you can start typing in the chatbox to start filling the flight-booking form. The chatbot also supports TTS(text-to-speech) to receive voice commands.
 
 ### Reference
