@@ -1,11 +1,24 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, request, jsonify
+
+import sys
+import pathlib
+from pathlib import Path # if you haven't already done so
+file = Path(__file__).resolve()
+parent, root = file.parent, file.parents[1]
+sys.path.append(str(root))
+
+try:
+    sys.path.remove(str(parent))
+except ValueError: # Already removed
+    pass
+
+
 from src.response import get_response
 from src.constants import COUNTRIES, CLASSES
 from src.utilities import PrepUtility
 import flask_sijax
 import os
-import pathlib
 from src.utilities import write_json
 import time
 from nlu.run_multi_task_rnn import Model, read_data_test
