@@ -5,16 +5,17 @@ This repository shows the code for our Capstone project (20s1, Group CS40). The 
 
 
 ### Setup
-The system is written in Python 3.7 environment, and mainly relies on the following libraries:
-flask, version 1.0.3, https://flask.palletsprojects.com/en/1.0.x/
-flask_sijax, version 0.4.1, (https://github.com/spantaleev/flask-sijax)
-six, version 1.12.0, (https://github.com/benjaminp/six)
-nltk, version 3.4.1, (https://www.nltk.org/install.html)
-tensorflow, version 1.13.1, (https://www.tensorflow.org/api_docs/)
+The system is written in Python 3.7 environment, and mainly relies on the following libraries: \
+flask, version 1.0.3, https://flask.palletsprojects.com/en/1.0.x/ \
+flask_sijax, version 0.4.1, (https://github.com/spantaleev/flask-sijax) \
+six, version 1.12.0, (https://github.com/benjaminp/six) \
+nltk, version 3.4.1, (https://www.nltk.org/install.html) \
+tensorflow, version 1.13.1, (https://www.tensorflow.org/api_docs/) \
 All application dependencies are included in the requirements.txt file and the dependency graph in the repository.
 
 ### Usage
-To run the model, execute the chat.py file under the src folder from the PyCharm IDE. After the flask server is set, enter http://127.0.0.1:1234/ in your browser and you can start typing in the chatbox to start filling the flight-booking form. The chatbot also supports TTS(text-to-speech) to receive voice commands.
+To run the model, execute the chat.py file under the src folder from the PyCharm IDE.\
+After the flask server is set, enter http://127.0.0.1:1234/ in your browser and you can start typing in the chatbox to start filling the flight-booking form. The chatbot also supports TTS(text-to-speech) to receive voice commands.
 
 ### Reference
  
