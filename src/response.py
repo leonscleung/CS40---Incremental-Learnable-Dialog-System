@@ -19,12 +19,14 @@ def get_response(message):
     place_from, place_to, isNewPlace = get_place(tag_ls, word_ls)
     date_departure, date_return, isNewDate = find_dates(message)
     is_round_trip, isNewTrip = find_trip(tag_ls, word_ls)
+    if date_departure and date_return:
+        is_round_trip = True
     connection_limit, isNewConnection = find_connection(tag_ls, word_ls)
     class_type, isNewClass = find_class_type(tag_ls, word_ls)
     informationDict = dict(date_departure=date_departure, date_return=date_return,
                     place_from=place_from, place_to=place_to, is_round_trip=is_round_trip,
                     customer_name=customer_name, connection_limit=connection_limit, class_type=class_type,
-                           isNewPlace = isNewPlace, isNewDate = isNewDate, isNewTrip = isNewTrip,
+                           isNewPlace = isNewPlace, isNewDate = isNewDate,
                            isNewConnection = isNewConnection, isNewClass = isNewClass)
     checkSlot(place_from, place_to, date_departure, date_return, is_round_trip, connection_limit, customer_name, class_type)
 
@@ -44,13 +46,32 @@ def get_response(message):
         else:
             slot_to_check = 'defaulterror'
         slotIndex = slot_list.index(slot_to_check)
-        message_response = random.choice(rules[slotIndex]['questions'])
+        if slot_to_check == 'searchResult':
+            if is_round_trip == True and connection_limit == 'zero':
+                message_response = rules[slotIndex]['questions']['roundwaywithout']
+            if is_round_trip == True and connection_limit != 'zero':
+                message_response = rules[slotIndex]['questions']['roundwaywithconnection']
+            if is_round_trip == False and connection_limit == 'zero':
+                message_response = rules[slotIndex]['questions']['onewaywithout']
+            if is_round_trip == False and connection_limit != 'zero':
+                message_response = rules[slotIndex]['questions']['onewaywithconnection']
+        else:
+            message_response = random.choice(rules[slotIndex]['questions'])
         response_list = prepareResponse(slot_to_check, message_response, informationDict)
+
+    is_new_from_place = True if isNewPlace and place_from else False
+    is_new_to_place = True if isNewPlace and place_to else False
+    is_new_from_date = True if isNewDate and date_departure else False
+    is_new_return_date = True if isNewDate and date_return else False
 
     print('[INFO] slot_checked after: ', slot_checked)
     response = dict(messages=response_list, date_departure=date_departure, date_return=date_return,
                     place_from=place_from, place_to=place_to, is_round_trip=is_round_trip,
-                    customer_name=customer_name, class_type=class_type)
+                    customer_name=customer_name, class_type=class_type, connection_limit=connection_limit,
+                    is_new_from_place = str(is_new_from_place), is_new_to_place = str(is_new_to_place),
+                    is_new_from_date = str(is_new_from_date), is_new_return_date = str(is_new_return_date),
+                    is_new_round_trip = str(isNewTrip and is_round_trip),
+                    is_new_connection = str(isNewConnection), is_new_class = str(isNewClass))
     return response
 
 def extract_information(test_tag_path):
@@ -94,6 +115,7 @@ def checkSlot(place_from, place_to, date_departure, date_return, is_round_trip, 
 
     if 'name' not in slot_checked and customer_name:
         slot_checked.append('name')
+        slot_checked.append('greeting')
 
     if 'class' not in slot_checked and class_type:
         slot_checked.append('class')
@@ -111,31 +133,63 @@ def prepareResponse(slot, response, informationDict):
     isNewPlace = informationDict.get('isNewPlace')
     isNewDate = informationDict.get('isNewDate')
     #isNewTrip = informationDict.get('isNewTrip')
-    #isNewConnection = informationDict.get('isNewConnection')
+    isNewConnection = informationDict.get('isNewConnection')
     isNewClass = informationDict.get('isNewClass')
-    print('slot:', slot, 'customer_name: ', customer_name)
     if slot == 'greeting':
         response = response.format(name = ' ' + customer_name)
     if slot == 'searchResult':
-        response = response.format(class_type = class_type, place_from=place_from,
-                                       place_to=place_to, connection_limit=connection_limit)
+        if is_round_trip == True:
+            if connection_limit == 'zero':
+                response = response.format(name = customer_name, class_type = class_type, place_from=place_from, place_to=place_to,
+                                       date_departure = date_departure, date_return = date_return)
+            else:
+                response = response.format(name = customer_name, class_type = class_type, place_from=place_from,
+                                       place_to=place_to, connection_limit=connection_limit,
+                                       date_departure = date_departure, date_return = date_return)
+        if is_round_trip == False:
+            if connection_limit == 'zero':
+                response = response.format(name = customer_name, class_type = class_type, place_from=place_from,
+                                       place_to=place_to, date_departure = date_departure)
+            else:
+                response = response.format(name = customer_name, class_type = class_type, place_from=place_from,
+                                       place_to=place_to, connection_limit=connection_limit,
+                                       date_departure = date_departure)
+
 
     summary_response = []
-    checkList = [isNewPlace, isNewDate, isNewClass]
+    checkList = [isNewPlace, isNewDate, isNewClass, isNewConnection]
     if any(checkList):
-        summary_response.append(random.choice(confirmations['opening']))
+        summary_response.append(random.choice(confirmations['opening1']))
+        summary_response.append(random.choice(confirmations['opening2']))
+        if is_round_trip is None:
+            summary_response.append(confirmations['ticket'])
+            if date_departure and isNewDate:
+                summary_response.append(confirmations['one_date'].format(date_departure=date_departure))
+        if is_round_trip == True:
+            summary_response.append(confirmations['round'])
+            if date_departure and date_return and isNewDate:
+                summary_response.append(
+                    confirmations['round_date'].format(date_departure=date_departure, date_return=date_return))
+        elif is_round_trip == False:
+            summary_response.append(confirmations['oneway'])
+            if date_departure and isNewDate:
+                summary_response.append(confirmations['one_date'].format(date_departure=date_departure))
+
     if place_from and place_to and isNewPlace:
         summary_response.append(confirmations['place'].format(place_from=place_from, place_to=place_to))
-        summary_response.append(confirmations['ending'])
-    if is_round_trip == True and date_departure and date_return and isNewDate:
-        summary_response.append(confirmations['round_date'].format(date_departure=date_departure, date_return=date_return))
-    if is_round_trip == False and date_departure and isNewDate:
-        summary_response.append(confirmations['one_date'].format(date_departure=date_departure))
-    # if connection_limit and isNewConnection:
-    #     summary_response.append(confirmations['connection'].format(connection_limit=connection_limit))
-    if connection_limit and class_type and isNewClass:
-        summary_response.append(confirmations['class'].format(connection_limit=connection_limit, class_type=class_type))
+    # if is_round_trip == True and date_departure and date_return and isNewDate:
+    #     summary_response.append(confirmations['round_date'].format(date_departure=date_departure, date_return=date_return))
+    # if is_round_trip == False and date_departure and isNewDate:
+    #     summary_response.append(confirmations['one_date'].format(date_departure=date_departure))
+    if connection_limit and isNewConnection:
+        if connection_limit == 'zero':
+            summary_response.append(confirmations['direct'])
+        else:
+            summary_response.append(confirmations['connection'].format(connection_limit=connection_limit))
+    if class_type and isNewClass:
+        summary_response.append(confirmations['class'].format(class_type=class_type))
     if len(summary_response)>=1:
+        summary_response.append(confirmations['ending'])
         summary = ' '.join(summary_response)
         response_list.append(dict(message=summary, time=format_current_time()))
 

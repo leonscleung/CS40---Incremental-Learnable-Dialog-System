@@ -254,3 +254,12 @@ margin-bottom: 15px !important;
 .form-radio {
     margin-top: 2rem !important;
 }
+
+form .filled {
+    border-color: #78e08f !important;
+    border-width: 3px !important;
+}
+
+form label.filled {
+    color: #78e08f !important;
+}

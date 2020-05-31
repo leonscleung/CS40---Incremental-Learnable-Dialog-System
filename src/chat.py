@@ -1,19 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, request, jsonify
-
 import sys
-import pathlib
-from pathlib import Path # if you haven't already done so
-file = Path(__file__).resolve()
-parent, root = file.parent, file.parents[1]
-sys.path.append(str(root))
-
-try:
-    sys.path.remove(str(parent))
-except ValueError: # Already removed
-    pass
-
-
+from pathlib import Path
 from src.response import get_response
 from src.constants import COUNTRIES, CLASSES
 from src.utilities import PrepUtility
@@ -23,7 +11,17 @@ from src.utilities import write_json
 import time
 from nlu.run_multi_task_rnn import Model, read_data_test
 from nlu.data_utils import prepare_multi_task_data
-root = pathlib.Path(os.path.abspath(__file__)).parent.parent
+
+file = Path(__file__).resolve()
+parent, root = file.parent, file.parents[1]
+sys.path.append(str(root))
+
+try:
+    sys.path.remove(str(parent))
+except ValueError: # Already removed
+    pass
+
+root = Path(os.path.abspath(__file__)).parent.parent
 test_seq_in_path = str(root) + '/data/ATIS_samples/test/test.seq.in'
 
 path = os.path.join('.', os.path.dirname(__file__), 'static/js/sijax/')
@@ -71,4 +69,4 @@ if __name__ == "__main__":
     test_set = read_data_test(in_seq_test, out_seq_test, label_test)
     model.predict(test_set)
     write_json(dict(), "ticket.json")
-    app.run(debug=False, port=1234)
+    app.run(debug=False, port=8888)

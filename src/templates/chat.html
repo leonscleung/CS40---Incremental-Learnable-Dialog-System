@@ -75,15 +75,15 @@
                             <form>
                                 <div class="form-row align-items-center">
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 my-1">
-                                        <label class="mr-sm-2 text-white" for="flightFrom">From</label>
-                                        <select class="custom-select mr-sm-2" id="flightFrom" v-model="form.place_from">
+                                        <label class="mr-sm-2 text-white" :class="{'filled': isNew(form.is_new_from_place) }" for="flightFrom">From</label>
+                                        <select class="custom-select mr-sm-2" id="flightFrom" :class="{'filled': isNew(form.is_new_from_place) }" v-model="form.place_from">
                                             <option value="" selected>Choose...</option>
                                             <option :key="index" :value="item" v-text="item" v-for="(item, index) in response.countries"></option>
                                         </select>
                                     </div>
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 my-1">
-                                        <label class="mr-sm-2 text-white" for="flightTo">To</label>
-                                        <select :disabled="isDisabled()" class="custom-select mr-sm-2" id="flightTo" v-model="form.place_to">
+                                        <label class="mr-sm-2 text-white" :class="{'filled': isNew(form.is_new_to_place) }" for="flightTo">To</label>
+                                        <select class="custom-select mr-sm-2" :class="{'filled': isNew(form.is_new_to_place) }" id="flightTo" v-model="form.place_to">
                                             <option value="" selected>Choose...</option>
                                             <option :key="index" :value="item" v-text="item" v-for="(item, index) in response.countries"></option>
                                         </select>
@@ -91,40 +91,47 @@
                                 </div>
                                 <div class="form-row align-items-center">
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 my-1">
-                                        <label class="mr-sm-2 text-white" for="flightFrom">Departure</label>
-                                        <input class="form-control" type="date" placeholder="Departure Date" v-model="form.date_departure">
+                                        <label class="mr-sm-2 text-white" :class="{'filled': isNew(form.is_new_from_date) }" for="flightFrom">Departure</label>
+                                        <input class="form-control" type="date" placeholder="Departure Date"  :class="{'filled': isNew(form.is_new_from_date) }" v-model="form.date_departure">
                                     </div>
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 my-1">
-                                        <label class="mr-sm-2 text-white" for="flightTo">Return</label>
-                                        <input :disabled="isDisabled()" class="form-control" type="date" placeholder="Return Date" v-model="form.date_return">
+                                        <label class="mr-sm-2 text-white" :class="{'filled': isNew(form.is_new_return_date) }" for="flightTo">Return</label>
+                                        <input :disabled="isDisabled()" class="form-control" type="date" placeholder="Return Date"  :class="{'filled': isNew(form.is_new_return_date) }" v-model="form.date_return">
                                     </div>
                                 </div>
                                 <div class="form-row align-items-center">
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 my-1">
-                                        <label class="mr-sm-2 text-white" for="flightClass">Travel Class</label>
-                                        <select class="custom-select mr-sm-2" id="flightClass" v-model="form.flight_class">
+                                        <label class="mr-sm-2 text-white" :class="{'filled': isNew(form.is_new_class) }" for="flightClass">Travel Class</label>
+                                        <select class="custom-select mr-sm-2" id="flightClass"  :class="{'filled': isNew(form.is_new_class) }" v-model="form.flight_class">
                                             <option value="" selected>Choose...</option>
                                             <option :key="index" :value="item.value" v-text="item.name" v-for="(item, index) in response.classes"></option>
-<!--                                                <option :key="index" :value="economy class" v-text="item" v-for="(item, index) in response.classes">-->
-<!--                                                <option :key="index" :value="busineses class" v-text="item" v-for="(item, index) in response.classes">-->
                                         </select>
                                     </div>
-                                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 my-1 text-xs-center text-sm-center text-md-center text-lg-center text-xl-center">
-                                        <div class="form-check form-check-inline form-radio">
-                                            <input class="form-check-input" type="radio" name="trip-direction" id="trip-one" value="false" v-model="form.is_round_trip">
-                                            <label class="form-check-label text-white" for="trip-one">One-way</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 my-1 text-xs-center text-sm-center text-md-center text-lg-center text-xl-center">
-                                        <div class="form-check form-check-inline form-radio">
-                                            <input class="form-check-input" type="radio" name="trip-direction" id="trip-round" value="true" v-model="form.is_round_trip">
-                                            <label class="form-check-label text-white" for="trip-round">Round-way</label>
-                                        </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 my-1">
+                                        <label class="mr-sm-2 text-white" :class="{'filled': isNew(form.is_new_connection) }" for="flightStop">Flight Stop</label>
+                                        <select class="custom-select mr-sm-2" id="flightStop"  :class="{'filled': isNew(form.is_new_connection) }" v-model="form.flight_stop">
+                                            <option value="" selected>Any number of stops</option>
+                                            <option value="zero">No stop only</option>
+                                            <option value="one">One stop or fewer</option>
+                                            <option value="two">Two stops or fewer</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="form-row align-items-center mt-3">
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 my-1">
-                                        <button type="submit" class="btn btn-primary btn-block" >Order Ticket Now</button>
+                                <div class="form-row align-items-center mt-2 pt-1">
+                                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 my-1 text-xs-center text-sm-center text-md-center text-lg-center text-xl-center">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="trip-direction" id="trip-one" value="false" :class="{'filled': form.is_new_round_trip }" v-model="form.is_round_trip">
+                                            <label class="form-check-label text-white" :class="{'filled': isNew(form.is_new_round_trip) }" for="trip-one">One-way</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 my-1 text-xs-center text-sm-center text-md-center text-lg-center text-xl-center">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="trip-direction" id="trip-round" value="true"  :class="{'filled': form.is_new_round_trip }" v-model="form.is_round_trip">
+                                            <label class="form-check-label text-white" :class="{'filled': isNew(form.is_new_round_trip) }" for="trip-round">Round-way</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 my-1">
+                                        <button type="submit" class="btn btn-primary btn-block">Order Ticket Now</button>
                                     </div>
                                 </div>
                             </form>

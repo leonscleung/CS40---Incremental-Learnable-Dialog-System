@@ -28,6 +28,7 @@ var app = new Vue({
             date_departure: "",
             date_return: "",
             flight_class: "",
+            flight_stop: "",
             is_round_trip: null
         }
     },
@@ -73,7 +74,9 @@ var app = new Vue({
                     this.bindPlace(response.data);
                     this.bindDate(response.data);
                     this.bindTrip(response.data);
-                    this.bindClass(response.data)
+                    this.bindClass(response.data);
+                    this.bindStop(response.data);
+                    this.bindIsNew(response.data)
                 });
             }
         },
@@ -102,6 +105,34 @@ var app = new Vue({
         bindClass: function(item){
             if(item.class_type){
                 this.form.flight_class = item.class_type;
+            }
+        },
+        bindStop: function(item){
+            if(item.connection_limit){
+                this.form.flight_stop = item.connection_limit;
+            }
+        },
+        bindIsNew: function(item){
+            if(item.is_new_from_place){
+                this.form.is_new_from_place = item.is_new_from_place;
+            }
+            if(item.is_new_from_date){
+                this.form.is_new_from_date = item.is_new_from_date;
+            }
+            if(item.is_new_to_place){
+                this.form.is_new_to_place = item.is_new_to_place;
+            }
+            if(item.is_new_return_date){
+                this.form.is_new_return_date = item.is_new_return_date;
+            }
+            if(item.is_new_round_trip){
+                this.form.is_new_round_trip = item.is_new_round_trip;
+            }
+            if(item.is_new_connection){
+                this.form.is_new_connection = item.is_new_connection;
+            }
+            if(item.is_new_class){
+                this.form.is_new_class = item.is_new_class;
             }
         },
         selected: function(item, selectedItem){
@@ -152,6 +183,12 @@ var app = new Vue({
                 return true;
             }
             return false;
+        },
+        isNew: function(item){
+            return item === "True"?true:false;
+        },
+        isFalse: function(item){
+            return item === "True"?false:true;
         }
     },
     watch: {

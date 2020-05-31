@@ -9,13 +9,13 @@ rules = [
  },
  {
    "slot": "name",
-   "questions": ["Sure, can I have your name please?",
-                 "Sure, may I know your name please?"]
+   "questions": ["Can I have your name please?",
+                 "May I know your name please?"]
  },
  {
    "slot": "place",
    "questions": ["Can you let me know your boarding and landing points?",
-                 "Ok, can I have your journey locations?"]
+                 "Can I have your journey locations?"]
  },
  {
    "slot": "place_from",
@@ -29,14 +29,14 @@ rules = [
  },
  {
    "slot": "trip_type",
-   "questions": ["Ok, will this be one way or round trip?",
+   "questions": ["Will this be one way or round trip?",
                  "Are you looking for one way or round trip flight?"]
  },
  {
     "slot": "date",
-    "questions": ["Sure, could you please share your departure and arrival day?",
+    "questions": ["Could you please share your departure and arrival day?",
                   "Can I have your travelling dates?",
-                  "Sure, please share your planned travel dates?"]
+                  "Please share your planned travel dates?"]
 },
  {
     "slot": "date_departure",
@@ -63,7 +63,10 @@ rules = [
  },
  {
    "slot": "searchResult",
-   "questions": ["There is a {class_type} flight travelling between {place_from} and {place_to} available with United airlines, with connection limit {connection_limit} and fare 100. Shall I proceed for booking?"]
+   "questions": {"onewaywithconnection":"Hi {name}, there is a {class_type} flight travelling between {place_from} and {place_to} departure on {date_departure} available with United airlines, with connection limit {connection_limit} and fare 100. Shall I proceed for booking?",
+                 "onewaywithout":"Hi {name}, there is a {class_type} flight directly travelling between {place_from} and {place_to} departure on {date_departure} available with United airlines and fare 100. Shall I proceed for booking?",
+                 "roundwaywithout":"Hi {name}, I found a direct flight from {place_from} to {place_to}. Your flights will be on {date_departure} and {date_return}, as {class_type} from United Airlines. Your ticket price will be 100. Is that ok for you?",
+                 "roundwaywithconnection": "Hi {name}, I found a flight with {connection_limit} stops from {place_from} to {place_to}. Your flights will be on {date_departure} and {date_return}, as {class_type} from United Airlines. Your ticket price will be 100. Is that ok for you?"}
  },
  {
    "slot": "confirmationY",
@@ -129,12 +132,18 @@ def extractSlot(inputString):
     return None
 
 
-confirmations = {'opening': ['If I understand correctly, ',
-                             'Please check if I got it correctly, ',
-                             'I want to double-check with you that '],
-                'place': 'you are flying from {place_from} to {place_to}. ',
-                'round_date': 'you want a round trip from {date_departure} to {date_return}.',
-                'one_date': 'you want a one-way trip departure from {date_departure}.',
-                'connection': 'the number of maximum connection you prefer is {connection_limit}.',
-                'class': 'you prefer a {class_type} flight with {connection_limit} connection .',
-                'ending': 'You can always modify the search fields on the right if I misunderstand anything.'}
+confirmations = {'opening1': ['Got it.',
+                             'Thanks for your information.',
+                             'Sure.',
+                             'Ok.'],
+                 'opening2': ['I will try to find','I will search for', 'I will get', 'So you want me to find'],
+                 'round': 'a return ticket',
+                 'oneway':'a one-way ticket',
+                 'ticket':'a flight ticket',
+                 'place': 'from {place_from} to {place_to}',
+                 'round_date': 'with departure date on {date_departure} and return date on {date_return}',
+                 'one_date': 'taking off on {date_departure}',
+                 'connection': 'with maximum {connection_limit} stop(s)',
+                 'direct': 'without stop',
+                 'class': 'in {class_type}',
+                 'ending': 'for you.'}

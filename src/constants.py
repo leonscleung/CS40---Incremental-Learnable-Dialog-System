@@ -1,3 +1,4 @@
+import calendar
 
 # Parameters
 ####################################################
@@ -57,3 +58,16 @@ CONNECTION_LS = 'B-connect'
 STOP_LS = ['B-flight_stop', 'I-flight_stop']
 
 NUMBER_LS = ['zero', 'one', 'two', 'three']
+
+DAY_DICT = {}
+for num, day in enumerate(calendar.day_name):
+    DAY_DICT[day.lower()] = num
+    DAY_DICT[day] = num
+
+MONTH_DICT = {}
+for num, month in enumerate(calendar.month_name):
+    if month:
+        MONTH_DICT[month]= num
+
+NEXT_MONTH_LS = ['next month', 'the following month']
+NUMBER_DICT = {'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6}
