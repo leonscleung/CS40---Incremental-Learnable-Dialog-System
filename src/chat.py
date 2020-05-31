@@ -2,15 +2,6 @@
 from flask import Flask, render_template, request, jsonify
 import sys
 from pathlib import Path
-from src.response import get_response
-from src.constants import COUNTRIES, CLASSES, WAY_LS
-from src.utilities import PrepUtility
-import flask_sijax
-import os
-from src.utilities import write_json
-import time
-from nlu.run_multi_task_rnn import Model, read_data_test
-from nlu.data_utils import prepare_multi_task_data
 
 file = Path(__file__).resolve()
 parent, root = file.parent, file.parents[1]
@@ -20,6 +11,16 @@ try:
     sys.path.remove(str(parent))
 except ValueError: # Already removed
     pass
+
+from src.response import get_response
+from src.constants import COUNTRIES, CLASSES, WAY_LS
+from src.utilities import PrepUtility
+import flask_sijax
+import os
+from src.utilities import write_json
+import time
+from nlu.run_multi_task_rnn import Model, read_data_test
+from nlu.data_utils import prepare_multi_task_data
 
 root = Path(os.path.abspath(__file__)).parent.parent
 test_seq_in_path = str(root) + '/data/ATIS_samples/test/test.seq.in'
