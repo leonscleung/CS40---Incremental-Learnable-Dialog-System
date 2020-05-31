@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, jsonify
 import sys
 from pathlib import Path
 from src.response import get_response
-from src.constants import COUNTRIES, CLASSES
+from src.constants import COUNTRIES, CLASSES, WAY_LS
 from src.utilities import PrepUtility
 import flask_sijax
 import os
@@ -37,6 +37,9 @@ data_path = str(root) + '/data/ATIS_samples'
 @app.route("/api/query")
 def query():
     message = str(request.args.get('message'))
+    for way in WAY_LS:
+        if way in message:
+            message = message.replace("-", " ")
     user_in = PrepUtility.create_test_seq_in(message)
     PrepUtility.prepareNLUMessage(user_in, test_seq_in_path)
     date_set = prepare_multi_task_data(data_path, 10000, 10000)
