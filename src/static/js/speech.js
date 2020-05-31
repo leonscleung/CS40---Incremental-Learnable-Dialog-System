@@ -171,7 +171,7 @@ function tts(responseText) {
     u.text = responseText;
     u.lang = 'en-AU';
     u.rate = 0.9;
-
+    //speechSynthesis.cancel();
     u.onend = function(event) {
       console.log(responseText + "(" + event.elapsedTime + ' milliseconds.) done.');
     }
