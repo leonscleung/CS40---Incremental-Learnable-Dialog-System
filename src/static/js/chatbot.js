@@ -185,10 +185,21 @@ var app = new Vue({
             return false;
         },
         isNew: function(item){
-            return item === "True"?true:false;
+            if (item === "True") {
+                return true
+            }
+            if (item === "False") {
+                return false
+            }
+            //return item === "True"?true:false;
         },
         isFalse: function(item){
-            return item === "True"?false:true;
+            if (item === "True") {
+                return false
+            }
+            if (item === "False") {
+                return true
+            }
         }
     },
     watch: {
