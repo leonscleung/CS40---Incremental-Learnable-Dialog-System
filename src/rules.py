@@ -65,8 +65,8 @@ rules = [
    "slot": "searchResult",
    "questions": {"onewaywithconnection":"Hi {name}, there is a {class_type} flight travelling between {place_from} and {place_to} departure on {date_departure} available with United airlines, with connection limit {connection_limit} and fare 100. Shall I proceed for booking?",
                  "onewaywithout":"Hi {name}, there is a {class_type} flight directly travelling between {place_from} and {place_to} departure on {date_departure} available with United airlines and fare 100. Shall I proceed for booking?",
-                 "roundwaywithout":"Hi {name}, I found a direct flight from {place_from} to {place_to}. Your flights will be on {date_departure} and {date_return}, as {class_type} from United Airlines. Your ticket price will be 100. Shall I proceed for booking?",
-                 "roundwaywithconnection": "Hi {name}, I found a flight with {connection_limit} stop(s) from {place_from} to {place_to} on {date_departure} and {date_return}, as {class_type} from United Airlines with price 100. Shall I proceed for booking?"}
+                 "roundwaywithout":"Hi {name}, I found a direct flight from {place_from} to {place_to}. Your flights will be on {date_departure} and {date_return}, as {class_type} from United Airlines. Your ticket price will be 100. Is that ok for you?",
+                 "roundwaywithconnection": "Hi {name}, I found a flight with {connection_limit} stop(s) from {place_from} to {place_to}. Your flights will be on {date_departure} and {date_return}, as {class_type} from United Airlines. Your ticket price will be 100. Is that ok for you?"}
  },
  {
    "slot": "confirmationY",

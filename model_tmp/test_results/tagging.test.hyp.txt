@@ -1,29 +1,29 @@
 BOS O
-thank O
-you O
+round B-round_trip
+trip I-round_trip
 EOS O
 
 
 BOS O
-thank O
-you O
+round B-round_trip
+trip I-round_trip
 EOS O
 
 
 BOS O
-thank O
-you O
+round B-round_trip
+trip I-round_trip
 EOS O
 
 
 BOS O
-thank O
-you O
+round B-round_trip
+trip I-round_trip
 EOS O
 
 
 BOS O
-thank O
-you O
+round B-round_trip
+trip I-round_trip
 EOS O
 
