@@ -1,1 +1,1 @@
-{"customer_name": "David", "place_from": "Miami", "place_to": "New York", "date_departure": "2020-10-02", "date_return": "2020-10-12", "is_round_trip": null, "connection_limit": "zero", "class_type": "economy class"}
+{"customer_name": "David", "place_from": "Miami", "place_to": "New York", "date_departure": null, "date_return": null, "is_round_trip": true, "connection_limit": null, "class_type": null}

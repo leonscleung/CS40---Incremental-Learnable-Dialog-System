@@ -63,6 +63,11 @@ def get_response(message):
     is_new_to_place = True if isNewPlace and place_to else False
     is_new_from_date = True if isNewDate and date_departure else False
     is_new_return_date = True if isNewDate and date_return else False
+    is_new_round_trip = None
+    if isNewTrip and is_round_trip:
+        is_new_round_trip = True
+    if isNewTrip and not is_round_trip:
+        is_new_round_trip = False
 
     print('[INFO] slot_checked after: ', slot_checked)
     response = dict(messages=response_list, date_departure=date_departure, date_return=date_return,
@@ -70,7 +75,7 @@ def get_response(message):
                     customer_name=customer_name, class_type=class_type, connection_limit=connection_limit,
                     is_new_from_place = str(is_new_from_place), is_new_to_place = str(is_new_to_place),
                     is_new_from_date = str(is_new_from_date), is_new_return_date = str(is_new_return_date),
-                    is_new_round_trip = str(isNewTrip and is_round_trip),
+                    is_new_round_trip = str(is_new_round_trip),
                     is_new_connection = str(isNewConnection), is_new_class = str(isNewClass))
     return response
 

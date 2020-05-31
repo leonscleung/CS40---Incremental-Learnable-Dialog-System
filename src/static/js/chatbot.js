@@ -100,7 +100,6 @@ var app = new Vue({
         },
         bindTrip: function(item){
             this.form.is_round_trip = item.is_round_trip;
-            console.log("this.form = ", this.form);
         },
         bindClass: function(item){
             if(item.class_type){
