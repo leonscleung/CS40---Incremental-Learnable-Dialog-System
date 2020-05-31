@@ -71,3 +71,4 @@ for num, month in enumerate(calendar.month_name):
 
 NEXT_MONTH_LS = ['next month', 'the following month']
 NUMBER_DICT = {'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6}
+WAY_LS = ['one-way','round-way', 'round-trip']
