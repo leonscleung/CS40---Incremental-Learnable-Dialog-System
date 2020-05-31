@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="187b6556-e9fc-4054-a286-265e831443d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ATIS_samples/test/test.ids10000.seq.in" beforeDir="false" afterPath="$PROJECT_DIR$/data/ATIS_samples/test/test.ids10000.seq.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ATIS_samples/test/test.seq.in" beforeDir="false" afterPath="$PROJECT_DIR$/data/ATIS_samples/test/test.seq.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_tmp/test_results/tagging.test.hyp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/model_tmp/test_results/tagging.test.hyp.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/response.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/response.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/js/chatbot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/js/chatbot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/chat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ticket.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/ticket.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rules.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rules.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
