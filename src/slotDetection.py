@@ -111,7 +111,10 @@ def find_trip(tag_ls, word_ls):
         is_round_trip = True
     ticket_info.update(dict(is_round_trip=is_round_trip))
     write_json(ticket_info, "ticket.json")
+<<<<<<< HEAD
     print('[INFO] find is round trip: ', is_round_trip)
+=======
+>>>>>>> a31e73003180c64cd7f70b8455797187d3db7706
     return is_round_trip, is_new_trip
 
 def find_class_type(tag_ls, word_ls):
@@ -184,9 +187,18 @@ def find_ambiguous_date(message):
             flight_dates.add(flight_date)
 
     for i in range(7):
+<<<<<<< HEAD
         if calendar.day_abbr[i] in message.split(" ") and calendar.day_name[i] not in message.split(" "):
             message = message.replace(calendar.day_abbr[i], calendar.day_name[i])
     for j in range(1, 13):
+=======
+        print(calendar.day_abbr[i], calendar.day_name[i])
+        if calendar.day_abbr[i] in message.split(" ") and calendar.day_name[i] not in message.split(" "):
+            message = message.replace(calendar.day_abbr[i], calendar.day_name[i])
+            
+    for j in range(1, 13):
+        print(calendar.month_abbr[j], calendar.month_name[j])
+>>>>>>> a31e73003180c64cd7f70b8455797187d3db7706
         if calendar.month_abbr[j] in message.split(" ") and calendar.month_name[j] not in message.split(" "):
             message = message.replace(calendar.month_abbr[j], calendar.month_name[j])
 
@@ -194,6 +206,7 @@ def find_ambiguous_date(message):
         if month in message:
             date = re.findall(r"\d+",message)
             if date:
+<<<<<<< HEAD
                 flight_date = datetime.datetime(year=today.year, month=MONTH_DICT[month], day=int(date[0]))
             elif 'last day' in message:
                 try:
@@ -204,6 +217,14 @@ def find_ambiguous_date(message):
                 flight_date = datetime.datetime(year=today.year, month=MONTH_DICT[month], day=1)
             if flight_date:
                 flight_dates.add(flight_date)
+=======
+                gap = monthRange - today.day + int(date[0])
+                flight_date = datetime.date(year=today.year, month=MONTH_DICT[month], day=int(date[0]))
+            elif 'last day' in message:
+                flight_date = datetime.date(year=today.year, month=MONTH_DICT[month], day=monthRange)
+            elif 'first day' in message:
+                flight_date = datetime.date(year=today.year, month=MONTH_DICT[month], day=1)
+>>>>>>> a31e73003180c64cd7f70b8455797187d3db7706
 
     for day in calendar.day_name:
         if 'this ' + day in message:
