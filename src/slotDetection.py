@@ -184,11 +184,14 @@ def find_ambiguous_date(message):
             flight_dates.add(flight_date)
 
     for i in range(7):
+        print(calendar.day_abbr[i], calendar.day_name[i])
         if calendar.day_abbr[i] in message.split(" ") and calendar.day_name[i] not in message.split(" "):
             message = message.replace(calendar.day_abbr[i], calendar.day_name[i])
-    for j in range(12):
+            
+    for j in range(1, 13):
+        print(calendar.month_abbr[j], calendar.month_name[j])
         if calendar.month_abbr[j] in message.split(" ") and calendar.month_name[j] not in message.split(" "):
-            message = message.replace(calendar.day_abbr[j], calendar.day_name[j])
+            message = message.replace(calendar.month_abbr[j], calendar.month_name[j])
 
     for month in MONTH_DICT:
         if month in message:
