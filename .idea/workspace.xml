@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="187b6556-e9fc-4054-a286-265e831443d6" name="Default Changelist" comment="" />
+    <list default="true" id="187b6556-e9fc-4054-a286-265e831443d6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ATIS_samples/test/test.ids10000.seq.in" beforeDir="false" afterPath="$PROJECT_DIR$/data/ATIS_samples/test/test.ids10000.seq.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ATIS_samples/test/test.seq.in" beforeDir="false" afterPath="$PROJECT_DIR$/data/ATIS_samples/test/test.seq.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_tmp/test_results/tagging.test.hyp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/model_tmp/test_results/tagging.test.hyp.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/seq_model/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/seq_model/checkpoint" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/seq_model/seq2seq.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/seq_model/seq2seq.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/seq_model/seq2seq.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/word_dict/word_dict_a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/word_dict/word_dict_q" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/wv_model/checkpoint" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/wv_model/word2vect_sg.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/wv_model/word2vect_sg.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/wv_model/word2vect_sg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/chat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/datasets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/initialize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/readers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/response.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/response.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rules.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rules.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rules.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/slotDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/slotDetection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/js/chatbot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/js/chatbot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ticket.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/ticket.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +47,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="JupyterTrust" id="909877b2-1f72-43ce-97dc-d037561b0f02" />
   <component name="ProjectId" id="1bx8FIaFUrJIjOOp3ujhFQzydNw" />
   <component name="ProjectViewState">
@@ -23,7 +59,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -40,9 +78,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="/usr/local/bin/python3.7" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -165,6 +203,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.chat" />
+      <item itemvalue="Python.data_utils" />
+      <item itemvalue="Python.new_test" />
+      <item itemvalue="Python.response" />
+      <item itemvalue="Python.run_multi_task_rnn" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.chat" />
@@ -203,24 +248,32 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1312" height="231" key="GridCell.Tab.0.bottom" timestamp="1590555161382">
-      <screen x="0" y="23" width="1440" height="805" />
+    <state x="184" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590900064502">
+      <screen x="0" y="23" width="1440" height="797" />
     </state>
+    <state x="184" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.797@0.23.1440.797" timestamp="1590900064502" />
+    <state width="1317" height="188" key="GridCell.Tab.0.bottom" timestamp="1590907968214">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state width="1317" height="188" key="GridCell.Tab.0.bottom/0.23.1440.797@0.23.1440.797" timestamp="1590907968214" />
     <state width="1312" height="231" key="GridCell.Tab.0.bottom/0.23.1440.805@0.23.1440.805" timestamp="1590555161382" />
     <state width="1312" height="167" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1589949309014" />
-    <state width="1312" height="231" key="GridCell.Tab.0.center" timestamp="1590555161381">
-      <screen x="0" y="23" width="1440" height="805" />
+    <state width="1317" height="188" key="GridCell.Tab.0.center" timestamp="1590907968213">
+      <screen x="0" y="23" width="1440" height="797" />
     </state>
+    <state width="1317" height="188" key="GridCell.Tab.0.center/0.23.1440.797@0.23.1440.797" timestamp="1590907968213" />
     <state width="1312" height="231" key="GridCell.Tab.0.center/0.23.1440.805@0.23.1440.805" timestamp="1590555161381" />
     <state width="1312" height="167" key="GridCell.Tab.0.center/0.23.1440.806@0.23.1440.806" timestamp="1589949309013" />
-    <state width="1312" height="231" key="GridCell.Tab.0.left" timestamp="1590555161381">
-      <screen x="0" y="23" width="1440" height="805" />
+    <state width="1317" height="188" key="GridCell.Tab.0.left" timestamp="1590907968213">
+      <screen x="0" y="23" width="1440" height="797" />
     </state>
+    <state width="1317" height="188" key="GridCell.Tab.0.left/0.23.1440.797@0.23.1440.797" timestamp="1590907968213" />
     <state width="1312" height="231" key="GridCell.Tab.0.left/0.23.1440.805@0.23.1440.805" timestamp="1590555161381" />
     <state width="1312" height="167" key="GridCell.Tab.0.left/0.23.1440.806@0.23.1440.806" timestamp="1589949309013" />
-    <state width="1312" height="231" key="GridCell.Tab.0.right" timestamp="1590555161382">
-      <screen x="0" y="23" width="1440" height="805" />
+    <state width="1317" height="188" key="GridCell.Tab.0.right" timestamp="1590907968214">
+      <screen x="0" y="23" width="1440" height="797" />
     </state>
+    <state width="1317" height="188" key="GridCell.Tab.0.right/0.23.1440.797@0.23.1440.797" timestamp="1590907968214" />
     <state width="1312" height="231" key="GridCell.Tab.0.right/0.23.1440.805@0.23.1440.805" timestamp="1590555161382" />
     <state width="1312" height="167" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1589949309014" />
     <state width="1312" height="197" key="GridCell.Tab.1.bottom" timestamp="1589622644220">
@@ -252,14 +305,5 @@
       <screen x="0" y="23" width="1440" height="805" />
     </state>
     <state x="0" y="65" width="979" height="618" key="dock-window-1/0.23.1440.805@0.23.1440.805" timestamp="1589625299019" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/integrate3$run_multi_task_rnn.coverage" NAME="run_multi_task_rnn Coverage Results" MODIFIED="1589603985962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/nlu" />
-    <SUITE FILE_PATH="coverage/integrate3$run_multi_task_rnn_hh.coverage" NAME="run_multi_task_rnn_hh Coverage Results" MODIFIED="1589617571422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/nlu" />
-    <SUITE FILE_PATH="coverage/integrate3$data_utils.coverage" NAME="data_utils Coverage Results" MODIFIED="1589623846656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/nlu" />
-    <SUITE FILE_PATH="coverage/integrate3$new_test.coverage" NAME="new_test Coverage Results" MODIFIED="1589601294951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/nlu" />
-    <SUITE FILE_PATH="coverage/integrate3$run_multi_task_rnn_backup.coverage" NAME="run_multi_task_rnn_backup Coverage Results" MODIFIED="1589562512489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/nlu" />
-    <SUITE FILE_PATH="coverage/integrate3$response.coverage" NAME="response Coverage Results" MODIFIED="1589956446921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/integrate3$chat.coverage" NAME="chat Coverage Results" MODIFIED="1590555161366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>
