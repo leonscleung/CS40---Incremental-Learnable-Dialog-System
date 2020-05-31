@@ -175,5 +175,6 @@ function tts(responseText) {
     u.onend = function(event) {
       console.log(responseText + "(" + event.elapsedTime + ' milliseconds.) done.');
     }
+    speechSynthesis.cancel();
     speechSynthesis.speak(u);
 }
