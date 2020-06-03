@@ -73,4 +73,4 @@ if __name__ == "__main__":
     test_set = read_data_test(in_seq_test, out_seq_test, label_test)
     model.predict(test_set)
     write_json(dict(), "ticket.json")
-    app.run(debug=False, port=8888)
+    app.run(debug=False, port=1234)

@@ -63,10 +63,10 @@ rules = [
  },
  {
    "slot": "searchResult",
-   "questions": {"onewaywithconnection":"Hi {name}, there is a {class_type} flight travelling between {place_from} and {place_to} departure on {date_departure} available with United airlines, with connection limit {connection_limit} and fare 100. Shall I proceed for booking?",
-                 "onewaywithout":"Hi {name}, there is a {class_type} flight directly travelling between {place_from} and {place_to} departure on {date_departure} available with United airlines and fare 100. Shall I proceed for booking?",
-                 "roundwaywithout":"Hi {name}, I found a direct flight from {place_from} to {place_to}. Your flights will be on {date_departure} and {date_return}, as {class_type} from United Airlines. Your ticket price will be 100. Shall I proceed for booking?",
-                 "roundwaywithconnection": "Hi {name}, I found a flight with {connection_limit} stop(s) from {place_from} to {place_to} on {date_departure} and {date_return}, as {class_type} from United Airlines with price 100. Shall I proceed for booking?"}
+   "questions": {"onewaywithconnection":"Here you are {name}, there is a {class_type} flight travelling between {place_from} and {place_to} departure on {date_departure} available with United airlines, with connection limit {connection_limit} and fare 100. Shall I proceed for booking?",
+                 "onewaywithout":"Here you are {name}, there is a {class_type} flight directly travelling between {place_from} and {place_to} departure on {date_departure} available with United airlines and fare 100. Shall I proceed for booking?",
+                 "roundwaywithout":"Here you are {name}, I found a direct flight from {place_from} to {place_to}. Your flights will be on {date_departure} and {date_return}, as {class_type} from United Airlines. Your ticket price will be 100. Shall I proceed for booking?",
+                 "roundwaywithconnection": "Here you are {name}, I found a flight with {connection_limit} stop(s) from {place_from} to {place_to} on {date_departure} and {date_return}, as {class_type} from United Airlines with price 100. Shall I proceed for booking?"}
  },
  {
    "slot": "confirmationY",
@@ -76,7 +76,7 @@ rules = [
  },
  {
     "slot": "confirmationN",
-    "questions": ["Thanks for reaching us. For further assistance, ou can also call to our customer-executive on 022-1111111."]
+    "questions": ["Thanks for reaching us. For further assistance, you can also call to our customer-executive on 022-1111111."]
  },
  {
    "slot": "ending",
