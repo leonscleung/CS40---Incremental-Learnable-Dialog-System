@@ -1,29 +1,39 @@
 BOS O
-thank O
-you O
+have O
+a O
+_UNK O
+day O
 EOS O
 
 
 BOS O
-thank O
-you O
+have O
+a O
+_UNK O
+day O
 EOS O
 
 
 BOS O
-thank O
-you O
+have O
+a O
+_UNK O
+day O
 EOS O
 
 
 BOS O
-thank O
-you O
+have O
+a O
+_UNK O
+day O
 EOS O
 
 
 BOS O
-thank O
-you O
+have O
+a O
+_UNK O
+day O
 EOS O
 
