@@ -27,7 +27,7 @@ cycler==0.10.0
 dataflows==0.0.71
 datapackage==1.13.0
 diazo==1.2.12
-Django==3.0.4
+Django==3.0.14
 django-haystack==2.8.1
 django-hitcounter==0.1.1
 django-revproxy==0.9.15
